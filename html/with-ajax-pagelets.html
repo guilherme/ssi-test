@@ -1,0 +1,41 @@
+<h1>Helloooo</h1>
+
+<div id="welcome">
+</div>
+
+<div id="bottom">
+</div>
+
+<script type='text/javascript'>
+(function() {
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.open("GET", '/welcome_content.html');
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+			if(xmlhttp.status == 200){
+				document.getElementById('welcome').innerHTML = xmlhttp.responseText;
+			}else{
+				console.log('Error: ' + xmlhttp.statusText );
+			}
+		}
+	}
+	xmlhttp.send();
+})();
+</script>
+<script type='text/javascript'>
+(function() {
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.open("GET", '/bottom-content.html');
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+			if(xmlhttp.status == 200){
+				document.getElementById('bottom').innerHTML = xmlhttp.responseText;
+			}else{
+				console.log('Error: ' + xmlhttp.statusText );
+			}
+		}
+	}
+	xmlhttp.send();
+})();
+</script>
+</script>
